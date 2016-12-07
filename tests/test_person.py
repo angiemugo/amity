@@ -1,13 +1,17 @@
+
 import unittest
-from amity.app.employee import Person, Fellow
+from ..App.Amity import AmityClass
 
 
-class TestClassFellow(unittest.TestCase):
-    def setUp(self):
-        self.fellow1 = Fellow("001", "angie")
+class TestPerson(unittest.TestCase):
+    def Test_fellow_is_added(self):
+        AmityClass.create_person("Angie", "staff")
+        self.assertEqual(self.person_name, "Angie")
+        self.assertEqual(self.person_description, "staff")
 
-    def test_Is_Instance(self):
-        self.assertIsInstance(self.fellow1, Person, msg="fellow is an instance of class Person")
+    def Test_staff_is_added(self):
+        AmityClass.create_person("Mugo", "fellow")
+        self.assertEqual(self.person_name, "Mugo")
+        self.assertEqual(self.person_designation, "staff")
 
-if __name__ == '__main__':
-    unittest.main()
+
