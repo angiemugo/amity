@@ -11,7 +11,7 @@ class Office:
         super(Office, self).__init__(room_name, max_occupants=6)
 
 
-class Livingspace:
+class Lspace:
     def __init__(self, room_name, max_occupants):
 
         super(Livingspace, self).__init__(room_name, max_occupants=4)

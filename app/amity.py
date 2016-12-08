@@ -1,10 +1,19 @@
-class Amity:
-    all_people = {}
-    amity_rooms = {}
-    office_allocations = {}
-    living_allocations = {}
+class AmityClass:
+    all_people = []
+    amity_fellows = []
+    amity_staff = []
+    amity_rooms = []
+    amity_offices = []
+    amity_lspaces = []
+    office_allocations = []
+    lspace_allocations = []
+    unallocated = []
 
     def create_room(self, room_name):
+
+        pass
+
+    def create_person(self, person_name):
         pass
 
     def add_person(self):
@@ -20,7 +29,7 @@ class Amity:
         pass
 
     def print_unallocated(self):
-        unallocated = {}
+        unallocated = []
         pass
 
     def print_all_rooms(self):
