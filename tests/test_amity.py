@@ -15,7 +15,7 @@ class ClassAmitySuccessTest(unittest.TestCase):
     def test_office_added_to_list(self):
         App.Amity.AmityClass.amity_lspaces = []
         self.assertFalse("Yellow" in App.Amity.AmityClass.amity_lspaces)
-        App.Amity.AmityClass.create_room("Yellow", "lspaces")
+        App.Amity.AmityClass.create_lspace("Yellow", "lspaces")
         self.assertTrue("Yellow" in App.Amity.AmityClass.amity_lspaces)
         new_lspaces_count = len(App.Amity.AmityClass.amity_lspaces)
         self.assertEqual(self.previous_lspaces_count + 1, new_lspaces_count)
@@ -41,16 +41,17 @@ class ClassAmitySuccessTest(unittest.TestCase):
         self.assertIn("Angie", "Purple",
                       msg="Angie is assigned to room purple")
         App.Amity.AmityClass.reallocate_person("angie")
-        self.assertNotEqual("Angie","purple", msg="Angie not assigned to purple")
+        self.assertNotEqual("Angie","purple",
+                            msg="Angie not assigned to purple")
 
     def test_load_from_file(self):
-        App.Amity.AmityClass. amity_fellows = []
-        App.Amity.AmityClass. amity_staff = []
-        self.assertEqual(len(self.amity_fellows, 0))
-        self.assertEqual(len(self.amity_staff,0))
-        App.Amity.AmityClass.load_people()
-        self.assertEqual(len(self.amity_fellows, 4))
-        self.assertEqual(len(self.amity_staff, 3))
+        App.Amity.AmityClass.amity_fellows = []
+        App.Amity.AmityClass.amity_staff = []
+        self.assertEqual(len(App.Amity.AmityClass.amity_fellows), 0)
+        self.assertEqual(len(App.Amity.AmityClass.amity_staff),0)
+        App.Amity.AmityClass.load_people(self)
+        self.assertEqual(len(App.Amity.AmityClass.amity_fellows), 4)
+        self.assertEqual(len(App.Amity.AmityClass.amity_staff), 3)
 
 
 

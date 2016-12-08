@@ -1,16 +1,17 @@
 import unittest
 from App.Amity import AmityClass
+from App.Room import Office,Lspace
 
 
 class TestRoom(unittest.TestCase):
     def test_office_is_created(self):
-        office = AmityClass.create_office("Purple", "office")
-        self.assertEqual(office.person_name, "PURPLE")
-        self.assertEqual(office.person_description, "OFFICE")
+        self.purple = AmityClass.create_office("Purple", "office")
+        self.assertEqual(self.purple.room_name, "PURPLE")
+        self.assertEqual(self.purple.room_description, "OFFICE")
 
     def test_lspace_is_created(self):
-        lspace = AmityClass.create_lspace("yellow", "lspace")
-        self.assertEqual(lspace.person_name, "YELLOW")
-        self.assertEqual(lspace.person_description, "YELLOW")
+        self.yellow = AmityClass.create_lspace("yellow", "lspace")
+        self.assertEqual(self.yellow.room_name, "YELLOW")
+        self.assertEqual(self.yellow.room_description, "LSPACE")
 
 

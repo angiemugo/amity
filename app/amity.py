@@ -9,11 +9,16 @@ class AmityClass:
     lspace_allocations = []
     unallocated = []
 
-    def create_room(self, room_name):
+    def create_lspace(self, room_name):
+
+        pass
+
+    def create_office(self, room_name):
 
         pass
 
     def create_person(self, person_name):
+
         pass
 
     def add_person(self):
