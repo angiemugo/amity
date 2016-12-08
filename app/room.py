@@ -1,4 +1,4 @@
-class Room:
+class RoomClass:
 
     def __init__(self, room_name, room_type, max_occupants):
         self.room_name = room_name
