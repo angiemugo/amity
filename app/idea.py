@@ -3,7 +3,7 @@ from .employee import PersonClass, Fellow, Staff
 import random
 
 
-class AmityClass:
+class amity:
     all_people = {}
     amity_rooms = {}
     amity_offices = {}
@@ -14,7 +14,7 @@ class AmityClass:
     available_offices = []
 
     def create_room(self, room_name,room_type):
-        if room_name.upper in [room_name for room_name in AmityClass.amity_rooms]:
+        if room_name.upper in [room_name for room_name in amity.amity_rooms]:
             print("Sorry, name already picked. Give it another shot!")
         else:
             if room_type.upper == "lspace":
@@ -34,66 +34,66 @@ class AmityClass:
 
     @staticmethod
     def generate_lspace():
-        lspaces = [room for room in AmityClass.available_lspaces if room.room_type == "lSPACE"]
-        for lspace in AmityClass.available_lspaces:
+        lspaces = [room for room in amity.available_lspaces if room.room_type == "lSPACE"]
+        for lspace in amity.available_lspaces:
             if Lspace.occupants > Lspace.max_occupants:
                 chosen_lspace = None
             else:
-                chosen_room = random.choice(AmityClass.available_lspaces)
+                chosen_room = random.choice(amity.available_lspaces)
             return chosen_lspace
 
     @staticmethod
     def generate_office():
-        offices = [room for room in AmityClass.available_offices if room.room_type == "office"]
-        for office in AmityClass.available_offices:
+        offices = [room for room in amity.available_offices if room.room_type == "office"]
+        for office in amity.available_offices:
             if Office.occupants > Office . max_occupants:
                 chosen_office = None
             else:
-                chosen_office = random.choice(AmityClass.available_offices)
+                chosen_office = random.choice(amity.available_offices)
             return chosen_office
 
 
     def create_person(self, person_name, person_description, wants_accommodation):
-        allocated_office = AmityClass.generate_office
-        AmityClass.office_allocations.append(person_name.upper + " " + person_description)
+        allocated_office = amity.generate_office
+        amity.office_allocations.append(person_name.upper + " " + person_description)
         print("congratulations,%S, you have been assigned to room %S" % (person_name, allocated_office))
         if person_description.upper == "fellow":
             person = PersonClass.Fellow(person_name, person_description)
-            self.amity_fellows.append(person)
+            self.fellows_list.append(person)
             self.all_people.append(person)
             if wants_accommodation == "y":
-                allocated_lspace = AmityClass.generate_lspace()
-                AmityClass.lspace_allocations.append(person_name.upper + " " + person_description.upper)
+                allocated_lspace = amity.generate_lspace()
+                amity.lspace_allocations.append(person_name.upper + " " + person_description.upper)
                 print("congratulations,%S, you have been assigned to room %S"% (person_name, allocated_lspace))
 
         elif person_description.upper == "staff":
             person = PersonClass.Staff(person_name, person_description)
-            self.amity_staff.append(person)
-            self.amity_fellows.append(person)
+            self.staff_list.append(person)
+            self.fellows_list.append(person)
         else:
             print("amity does not know you")
 
     def reallocate_person(self, person_name, person_description, new_room):
-        if new_room in AmityClass.amity_lspaces:
-            if person_name in AmityClass.amity_staff:
+        if new_room in amity.amity_lspaces:
+            if person_name in amity.staff_list:
                 print("sorry, staff cannot be assigned living spaces" )
-            elif person_name in AmityClass.amity_fellows:
-                if new_room.upper not in AmityClass.available_lspaces:
+            elif person_name in amity.fellows_list:
+                if new_room.upper not in amity.available_lspaces:
                     print("sorry, the room is not available")
-                elif new_room.upper in AmityClass.available_lspaces:
+                elif new_room.upper in amity.available_lspaces:
                     reallocated_lspace = new_room
-                    AmityClass.lspace_allocations.append(person_name.upper + " " + person_description.upper)
+                    amity.lspace_allocations.append(person_name.upper + " " + person_description.upper)
                     print("congratulations,%S, you have been re-assigned to room %S" % (person_name, reallocated_lspace))
                 else:
                     print("The room you chose does not exist")
             else:
                 print("sorry, amity does not know you")
-        if new_room in AmityClass.amity_offices:
-            if person_name in AmityClass:
+        if new_room in amity.amity_offices:
+            if person_name in amity:
                 reallocated_office = new_room
-                AmityClass.office_allocations.append(person_name.upper + " " + person_description.upper)
+                amity.office_allocations.append(person_name.upper + " " + person_description.upper)
                 print("congratulations,%S, you have been re-assigned to room %S" % (person_name, reallocated_office))
-            elif person_name not in AmityClass:
+            elif person_name not in amity:
 
                 print("sorry,Amity does not know you")
 

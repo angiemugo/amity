@@ -1,4 +1,4 @@
-class PersonClass:
+class PersonClass(object):
 
     """
     should have person_id, person attribute, person name
@@ -8,16 +8,14 @@ class PersonClass:
         self.person_description = person_description
         self.wants_accommodation = wants_accomodation
 
-
 class Fellow(PersonClass):
-    def __init__(self, person_name, wants_accommodation):
-        super(Fellow, self).__init__(person_name, wants_accommodation,
-                                     person_description="fellow")
+    def __init__(self, person_name, person_description, wants_accomodation='N'):
+        super(Fellow, self).__init__(person_name, person_description, wants_accomodation)
 
 
 class Staff(PersonClass):
-    def __init__(self, person_name):
+    def __init__(self, person_name, person_description, wants_accomodation='N'):
 
-        super(Staff, self).__init__(person_name,wants_accomodation=N,
-                                    person_description="staff")
+        super(Staff, self).__init__(person_name, person_description, wants_accomodation)
+
 #create person here

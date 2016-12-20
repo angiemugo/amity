@@ -8,14 +8,14 @@ class RoomClass(object):
         self.max_occupants = max_occupants
 
 
-class Office:
-    def __init__(self, room_name, room_type, occupants):
-        super(Office, self).__init__(room_name,  occupants,room_type="office",
-                                     max_occupants=6)
+class Office(RoomClass):
+    def __init__(self, room_name, room_type):
+        super(Office, self).__init__(room_name,  room_type="OFFICE",
+                                     max_occupants=6, occupants=0)
 
 
-class Lspace:
-    def __init__(self, room_name, room_type, occupants):
-        super(Lspace, self).__init__(room_name, occupants, room_type="lspace",
-                                     max_occupants=4)
+class Lspace(RoomClass):
+    def __init__(self, room_name, room_type):
+        super(Lspace, self).__init__(room_name,  room_type="LSPACE",
+                                     max_occupants=4, occupants=0)
 #add lspace, office here
