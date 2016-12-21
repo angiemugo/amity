@@ -200,3 +200,22 @@ class Amity:
         print("-" * 30 + "\n" + room_name + "\n" + "-" * 30)
         for room,person in self.lspace_allocations.items() :
             print(person)
+inst = Amity()
+inst.print_allocations()
+inst = Amity()
+inst.create_room("angie", "office")
+
+inst.create_room("de", "lspace")
+inst.create_room("de1", "lspace")
+inst.create_room("de2", "lspace")
+inst.create_room("de3", "lspace")
+
+inst.create_person("Angela", "fellow", "Y")
+inst.create_person("Ian", "fellow", "Y")
+
+inst.print_allocations("load_file")
+inst.print_unallocated()
+
+inst.load_people("people_file.txt")
+inst.print_room("angie")
+inst.reallocate_person_to_lspace("angie", "de")
