@@ -29,7 +29,9 @@ class Room(Base):
     people_allocated_office = Column(String, nullable=True)
 
 def create_db(db_name):
-    engine = create_engine('sqlite:///' + db_name + '.db')
+    db = db_name + '.db'
+    if os.path.exists(db):
+        engine = create_engine('sqlite:///' + db)
     Base.metadata.create_all(engine)
     return engine
 

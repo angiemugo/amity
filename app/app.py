@@ -55,9 +55,10 @@ def app_exec(func):
 
 
 class AmityApp(cmd.Cmd):
-	intro = cprint(figlet_format("Amity Room Allocator", font="cosmike"),\
+	intro = cprint(figlet_format("Amity Room!!!", font="cosmike"),\
 				"yellow")
 	prompt = "Amity --> "
+
 	amity = Amity()
 
 	@app_exec
@@ -92,23 +93,24 @@ class AmityApp(cmd.Cmd):
 	@app_exec
 	def do_print_office_allocations(self, arg):
 		"""
-		Prints all rooms and the people in them.
-		Usage: print_allocations [--o=filename]
+		Prints all offices and the people in them.
+		Usage: print_office_allocation [--o=filename]
 		"""
 		filename = arg["--o"] or ""
 		self.amity.print_office_allocations(filename)
+
 	@app_exec
 	def do_print_lspace_allocations(self, arg):
 		"""
-		Prints all rooms and the people in them.
-		Usage: print_allocations [--o=filename]
+		Prints all lspaces and the people in them.
+		Usage: print_lspace_allocation [--o=filename]
 		"""
 		filename = arg["--o"] or ""
 		self.amity.print_lspace_allocations(filename)
 	@app_exec
 	def do_print_unallocated(self, arg):
 		"""
-		Prints all the people that don't have relevant rooms
+		Prints all the people that don't have rooms
 		Usage: print_unallocated [--o=filename]
 		"""
 		filename = arg["--o"] or ""
@@ -136,6 +138,7 @@ class AmityApp(cmd.Cmd):
 
 	@app_exec
 	def do_load_state(self, arg):
+
 		"""
 		Loads data from the specified db into the app.
 		Usage: load_state <filename>
@@ -153,6 +156,7 @@ class AmityApp(cmd.Cmd):
 			self.amity.save_state(db)
 		else:
 			self.amity.save_state()
+
 
 	@app_exec
 	def do_quit(self, arg):
