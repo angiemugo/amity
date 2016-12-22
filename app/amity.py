@@ -1,5 +1,6 @@
 from collections import defaultdict
 import random
+import json
 from room import RoomClass, Office, Lspace
 from employee import PersonClass, Fellow, Staff
 from sqlalchemy import create_engine
@@ -149,7 +150,7 @@ class Amity:
                     else:
                         reallocated_lspace = new_room
                         self.lspace_allocations[new_room].append(person_name.upper())
-                        self.lspace_allocations[allocated_lspace].remove(person_name.upper())
+                        #self.lspace_allocations[allocated_lspace].remove(person_name.upper())
                         print("congratulations %s, you have been re-assigned to room %s"
                               % (person_name, reallocated_lspace))
 
@@ -158,8 +159,8 @@ class Amity:
                     print("sorry, the room is not available")
                 else:
                     reallocated_office = new_room
-                    self.office_allocations.append(person_name.upper())
-                    print("congratulations %s, you have been re-assigned to room %s")
+                    #self.office_allocations[allocated_lspace].append(person_name.upper())
+                    print("congratulations %s, you have been re-assigned to room %s"% (person_name, reallocated_lspace))
 
 
 
@@ -194,13 +195,31 @@ class Amity:
         else:
             print("please provide a text file")
 
-    def print_allocations(self, filename=None):
+    def print_office_allocations(self, filename=None):
         """prints all allocations"""
-        print("-" * 30 + "\n" + "AMITY ALLOCATIONS\n" + "-" * 30)
+        print("-" * 30 + "\n" + "AMITY ALLOCATIONS\n" + "-" * 30 + "\n")
+        if room_type == office:
+            for office, name in self.office_allocations.items():
+                print(office.room_name.upper())
+                print("-" * 30)
+                print("\n")
+                print(name.person_name.upper())
+                print("\n")
 
-        #print(self.office_allocations)
+            if filename:
+                file = open(filename + ".txt", "a")
+                file.write("-" * 30 + "\n")
+                for office in self.office_allocations:
+                    file.write("\n" + office.room_name.upper() + "\n")
+                    file.write("-" * 30 + "\n")
+                    for name in self.office_allocations[office]:
+                        file.write(name.upper() + ", " )
+                    file.write("\n")
+    def print_office_allocations(self, filename=None):
+        """prints all allocations"""
+        print("-" * 30 + "\n" + "AMITY ALLOCATIONS\n" + "-" * 30 + "\n")
         for office, name in self.office_allocations.items():
-            print(office.room_name.upper())
+            print(office.upper())
             print("-" * 30)
             print("\n")
             print(name.upper())
@@ -216,9 +235,31 @@ class Amity:
                     file.write(name.upper() + ", " )
                 file.write("\n")
 
+    def print_lspace_allocations(self, filename=None):
+        """prints all allocations"""
+        print("-" * 30 + "\n" + "AMITY ALLOCATIONS\n" + "-" * 30 + "\n")
+        for lspace, name in self.lspace_allocations.items():
+            print(lspace.upper())
+            print("-" * 30)
+            print("\n")
+            print(name)
+            print("\n")
+
+        if filename:
+            file = open(filename + ".txt", "a")
+            file.write("-" * 30 + "\n")
+            for lspace, name in self.lspace_allocations.items():
+                file.write("\n" + lspace + "\n")
+                file.write("-" * 30 + "\n")
+                for name in name:
+                    file.write(name)
+                    file.write("\n")
+
+
+
     def print_unallocated(self, filename=None):
         """prints all unallocated persons"""
-        print("-" * 30 + "\n" + "amity_unallocated\n" + "-" * 30)
+        print("-" * 30 + "\n" + "amity_unallocated\n" + "-" * 30 +"\n")
         if len(self.amity_unallocated)!=0:
             for person in self.amity_unallocated:
                 print(person)
@@ -249,8 +290,13 @@ class Amity:
         database_rooms_list = [item.room_name for item in result]
         for room in range(len(self.all_rooms)):
             if self.all_rooms[room].room_name not in database_rooms_list:
+                people_in_lspace = self.lspace_allocations[room].join(",")
+                people_in_office = self.lspace_allocations[room].join(",")
                 new_room = Room(room_name=self.all_rooms[room].room_name,
-                                          room_type=self.all_rooms[room].room_type)
+                                room_type=self.all_rooms[room].room_type,
+                                people_allocated_lspace=people_in_lspace,
+                                people_allocated_office=people_in_office
+                                          )
                 session.add(new_room)
                 session.commit()
 
@@ -270,8 +316,6 @@ class Amity:
                     lspace_allocated = 'N'
                 else:
                     lspace_allocated = self.generate_room("lspace").room_name
-
-                # person_name = self.all_people[people].person_name
                 person_description = self.all_people[people].person_description
                 wants_accommodation = self.all_people[people].wants_accommodation
                 new_person = Employee(person_name = person ,
@@ -288,16 +332,27 @@ class Amity:
 
 
 inst = Amity()
-
+inst.create_room("de", "lspace")
+inst.create_room("de1", "lspace")
+inst.create_room("purple", "office")
+inst.create_room("green", "office")
+inst.create_person("Angela", "fellow", "Y")
+inst.create_person("Ian", "fellow", "Y")
+#inst.load_people("data.txt")
+inst.print_lspace_allocations("load_file.txt")
+inst.save_state("amitydb")
+'''
 inst.create_room("de", "lspace")
 inst.create_room("de1", "lspace")
 inst.create_person("Angela", "fellow", "Y")
 inst.create_person("Ian", "fellow", "Y")
-inst.load_people("data.txt")
-inst.save_state("amitydb")
-inst.reallocate_person("Angela", "de", "lspace")
+#inst.load_people("data.txt")
+#inst.save_state("amitydb")
+#inst.reallocate_person("Angela", "de", "lspace")
+inst.print_lspace_allocations("load_file")
 
-'''
+
+
 
 inst.create_room("angie", "office")
 inst.reallocate_person("Angela", "de", "lspace")
@@ -314,7 +369,7 @@ inst.print_unallocated()
 inst.load_people("data.txt")
 inst.print_room("angie")
 
-inst.print_allocations()
+inst.print_lspace_allocations()
 
 
 '''

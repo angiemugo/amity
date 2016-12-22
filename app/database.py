@@ -25,10 +25,11 @@ class Room(Base):
     room_id = Column(Integer, primary_key=True, autoincrement=True)
     room_name = Column(String, nullable=False)
     room_type = Column(String, nullable=False)
-    people_allocated = Column(String, nullable=True)
+    people_allocated_lspace = Column(String, nullable=True)
+    people_allocated_office = Column(String, nullable=True)
 
 def create_db(db_name):
-    engine = create_engine('sqlite:///' + db_name)
+    engine = create_engine('sqlite:///' + db_name + '.db')
     Base.metadata.create_all(engine)
     return engine
 

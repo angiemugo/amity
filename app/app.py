@@ -5,10 +5,11 @@ This system makes it easy to manage rooms and people at Amity.
 Usage:
 	create_room <room_type> <room_name>
 	create_person <person_name> <person_description> [--wants_accommodation=N]
-	reallocate_person <person_id> <room_type> <new_room>
+	reallocate_person <person_name> <room_type> <new_room>
 	load_people <filename>
 	print_room <room_name>
-	print_allocations [--o=filename]
+	print_lspace_allocations [--o=filename]
+	print_office_allocations [--o=filename]
 	print_unallocated [--o=filename]
 	load_state [--dbname]
 	save_state [--o=db_name]
@@ -54,18 +55,19 @@ def app_exec(func):
 
 
 class AmityApp(cmd.Cmd):
-	intro = cprint(figlet_format("Amity Room Allocator", font="bulbhead"),\
+	intro = cprint(figlet_format("Amity Room Allocator", font="cosmike"),\
 				"yellow")
 	prompt = "Amity --> "
+	amity = Amity()
 
 	@app_exec
 	def do_create_room(self, arg):
 		"""Creates a new room
-		Usage: create_room <room_name> <room_type> ...
+		Usage: create_room <room_name> <room_type>
 		"""
 		room_name = arg["<room_name>"]
 		room_type = arg["<room_type>"]
-		Amity.create_room(room_name, room_type)
+		self.amity.create_room(room_name, room_type)
 
 	@app_exec
 	def do_create_person(self, arg):
@@ -77,7 +79,7 @@ class AmityApp(cmd.Cmd):
 
 		person_description= arg["<person_description>"]
 		wants_accommodation = arg["--wants_accommodation"]
-
+		self.amity.create_person(person_name, person_description, wants_accommodation)
 
 	@app_exec
 	def do_print_room(self, arg):
@@ -85,17 +87,24 @@ class AmityApp(cmd.Cmd):
 		Prints all the people in a given rooms
 		Usage: print_room <room_name>
 		"""
-		Amity.print_room(arg["<room_name>"])
+		self.amity.print_room(arg["<room_name>"])
 
 	@app_exec
-	def do_print_allocations(self, arg):
+	def do_print_office_allocations(self, arg):
 		"""
 		Prints all rooms and the people in them.
 		Usage: print_allocations [--o=filename]
 		"""
 		filename = arg["--o"] or ""
-		Amity.print_allocations(filename)
-
+		self.amity.print_office_allocations(filename)
+	@app_exec
+	def do_print_lspace_allocations(self, arg):
+		"""
+		Prints all rooms and the people in them.
+		Usage: print_allocations [--o=filename]
+		"""
+		filename = arg["--o"] or ""
+		self.amity.print_lspace_allocations(filename)
 	@app_exec
 	def do_print_unallocated(self, arg):
 		"""
@@ -103,7 +112,7 @@ class AmityApp(cmd.Cmd):
 		Usage: print_unallocated [--o=filename]
 		"""
 		filename = arg["--o"] or ""
-		Amity.print_unallocated(filename)
+		self.amity.print_unallocated(filename)
 
 	@app_exec
 	def do_load_people(self, arg):
@@ -111,19 +120,19 @@ class AmityApp(cmd.Cmd):
 		Loads people from a text file to the app.
 		Usage: load_people <filename>
 		"""
-		Amity.load_people(arg["<filename>"])
+		self.amity.load_people(arg["<filename>"])
 		print("File loaded.")
 
 	@app_exec
-	def do_reallocate_person_to_lspace(self, arg):
+	def do_reallocate_person(self, arg):
 		"""
 		Reallocates person
 		Usage: reallocate_person <person_name> <new_room> <room_type>
 		"""
 		person_name = arg["<person_name>"]
 		new_room = arg["<new_room>"]
-		rtype = arg["<room_type>"]
-		Amity.reallocate_person(person_name, new_room, room_type)
+		room_type = arg["<room_type>"]
+		self.amity.reallocate_person(person_name, new_room, room_type)
 
 	@app_exec
 	def do_load_state(self, arg):
@@ -131,7 +140,7 @@ class AmityApp(cmd.Cmd):
 		Loads data from the specified db into the app.
 		Usage: load_state <filename>
 		"""
-		Amity.load_state(arg["<filename>"])
+		self.amity.load_state(arg["<filename>"])
 
 	@app_exec
 	def do_save_state(self, arg):
@@ -141,9 +150,9 @@ class AmityApp(cmd.Cmd):
 		"""
 		db = arg['--db_name']
 		if db:
-			Amity.save_state(db)
+			self.amity.save_state(db)
 		else:
-			Amity.save_state()
+			self.amity.save_state()
 
 	@app_exec
 	def do_quit(self, arg):
