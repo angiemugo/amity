@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97154803-e552-4918-a1ce-bf6009b5a188" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amitydb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/gvhhj.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/idea.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/load_file.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/load_file.txt.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/new_file copy.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/people_file.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amitydb.db" afterPath="$PROJECT_DIR$/app/amitydb.db" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amitydb.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amitydb2.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/data.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/data.txt.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amity.py" afterPath="$PROJECT_DIR$/app/amity.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.py" afterPath="$PROJECT_DIR$/app/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database.py" afterPath="$PROJECT_DIR$/app/database.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/employee.py" afterPath="$PROJECT_DIR$/app/employee.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_amity_success.py" afterPath="$PROJECT_DIR$/tests/test_amity_success.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,8 +32,28 @@
           <file leaf-file-name="amity.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/amity.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="307">
-                  <caret line="153" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="410" selection-end-column="0" />
+                <state relative-caret-position="-435">
+                  <caret line="202" column="23" lean-forward="false" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="data.txt" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/data.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="90">
+                  <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -43,25 +62,9 @@
           <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/app.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
+                <state relative-caret-position="-855">
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding>
-                    <marker date="1482403370000" expanded="true" signature="1147:3796" ph="..." />
-                    <marker date="1482403370000" expanded="true" signature="2380:2563" ph="..." />
-                    <marker date="1482403370000" expanded="true" signature="2383:2485" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                    <marker date="1482403370000" expanded="true" signature="2612:2783" ph="..." />
-                    <marker date="1482403370000" expanded="true" signature="2615:2712" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                    <marker date="1482403370000" expanded="true" signature="2827:2983" ph="..." />
-                    <marker date="1482403370000" expanded="true" signature="2830:2915" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                    <marker date="1482403370000" expanded="true" signature="3034:3297" ph="..." />
-                    <marker date="1482403370000" expanded="true" signature="3037:3131" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                    <marker date="1482403370000" expanded="true" signature="3340:3475" ph="..." />
-                    <marker date="1482403370000" expanded="true" signature="3343:3432" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                    <marker date="1482403370000" expanded="true" signature="3518:3707" ph="..." />
-                    <marker date="1482403370000" expanded="true" signature="3521:3610" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                    <marker date="1482403370000" expanded="true" signature="3744:3796" ph="..." />
-                    <marker date="1482403370000" expanded="true" signature="3747:3787" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -97,9 +100,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="30">
                   <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-                  <folding>
-                    <marker date="1482396620000" expanded="true" signature="711:950" ph="..." />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -161,7 +162,6 @@
         <option value="$PROJECT_DIR$/tests/__init__.py" />
         <option value="$PROJECT_DIR$/tests/persontest.py" />
         <option value="$PROJECT_DIR$/app/Amity.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/tests/hjfvk.py" />
         <option value="$PROJECT_DIR$/App/load_people_txt.txt" />
         <option value="$PROJECT_DIR$/App/Employee.py" />
@@ -186,9 +186,11 @@
         <option value="$PROJECT_DIR$/app/amitydb.py" />
         <option value="$PROJECT_DIR$/app/amitydb.sqlite.py" />
         <option value="$PROJECT_DIR$/app/database.py" />
-        <option value="$PROJECT_DIR$/tests/test_amity_success.py" />
         <option value="$PROJECT_DIR$/app/gvhhj.py" />
         <option value="$PROJECT_DIR$/app/app.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/data.txt" />
+        <option value="$PROJECT_DIR$/tests/test_amity_success.py" />
         <option value="$PROJECT_DIR$/app/amity.py" />
         <option value="$PROJECT_DIR$/app/amity.py" />
       </list>
@@ -566,10 +568,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="757" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="757" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12708499" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12549643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278237" sideWeight="0.50277996" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -617,21 +619,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/amity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/room.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -714,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/hjfvk.py" />
     <entry file="file://$USER_HOME$/Downloads/- (1).py">
       <provider selected="true" editor-type-id="text-editor">
@@ -752,22 +732,40 @@
     <entry file="file://$PROJECT_DIR$/app/file.txt" />
     <entry file="file://$PROJECT_DIR$/load_file.txt" />
     <entry file="file://$PROJECT_DIR$/app/amitydb.py" />
-    <entry file="file://$PROJECT_DIR$/app/employee.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/load_file.txt" />
     <entry file="file://$PROJECT_DIR$/app/database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1482396620000" expanded="true" signature="711:950" ph="..." />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/amitydb.sqlite.py" />
+    <entry file="file://$PROJECT_DIR$/app/idea.py" />
+    <entry file="file://$PROJECT_DIR$/app/gvhhj.py" />
+    <entry file="file://$PROJECT_DIR$/tests/test_amity_success.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/data.txt.txt" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/employee.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -781,59 +779,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/amitydb.sqlite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/idea.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/gvhhj.py" />
     <entry file="file://$PROJECT_DIR$/app/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-855">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1482403370000" expanded="true" signature="1147:3796" ph="..." />
-            <marker date="1482403370000" expanded="true" signature="2380:2563" ph="..." />
-            <marker date="1482403370000" expanded="true" signature="2383:2485" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1482403370000" expanded="true" signature="2612:2783" ph="..." />
-            <marker date="1482403370000" expanded="true" signature="2615:2712" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1482403370000" expanded="true" signature="2827:2983" ph="..." />
-            <marker date="1482403370000" expanded="true" signature="2830:2915" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1482403370000" expanded="true" signature="3034:3297" ph="..." />
-            <marker date="1482403370000" expanded="true" signature="3037:3131" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1482403370000" expanded="true" signature="3340:3475" ph="..." />
-            <marker date="1482403370000" expanded="true" signature="3343:3432" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1482403370000" expanded="true" signature="3518:3707" ph="..." />
-            <marker date="1482403370000" expanded="true" signature="3521:3610" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1482403370000" expanded="true" signature="3744:3796" ph="..." />
-            <marker date="1482403370000" expanded="true" signature="3747:3787" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_amity_success.py">
+    <entry file="file://$PROJECT_DIR$/app/data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/amity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="153" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="410" selection-end-column="0" />
+        <state relative-caret-position="-435">
+          <caret line="202" column="23" lean-forward="false" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="23" />
           <folding />
         </state>
       </provider>
