@@ -1,19 +1,21 @@
-class Room:
+class RoomClass(object):
 
-    def __init__(self, room_name, room_type, max_occupants):
+    def __init__(self, room_name=None, room_type=None, max_occupants=None,
+                 occupants=None):
         self.room_name = room_name
         self.room_type = room_type
+        self.occupants = occupants
         self.max_occupants = max_occupants
 
 
-class Office:
-    def __init__(self, room_name, max_occupants):
-        super(Office, self).__init__(room_name, max_occupants=6)
+class Office(RoomClass):
+    def __init__(self, room_name, room_type):
+        super(Office, self).__init__(room_name,  room_type="OFFICE",
+                                     max_occupants=6, occupants=0)
 
 
-class Livingspace:
-    def __init__(self, room_name, max_occupants):
-
-        super(Livingspace, self).__init__(room_name, max_occupants=4)
-
-        self.room_name = room_name
+class Lspace(RoomClass):
+    def __init__(self, room_name, room_type):
+        super(Lspace, self).__init__(room_name,  room_type="LSPACE",
+                                     max_occupants=4, occupants=0)
+#add lspace, office here
