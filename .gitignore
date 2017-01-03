@@ -3,4 +3,6 @@ __pycache__/
 .coverage
 .DS_Store
 .data.txt
-.amitydb2
+.amitydb
+*.db
+*.txt
