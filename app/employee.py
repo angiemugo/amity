@@ -1,7 +1,7 @@
 class PersonClass(object):
 
     """
-    should have person_id, person attribute, person name
+    should have person_id, person description, person name
     """
     def __init__(self, person_name, person_description, wants_accommodation):
         self.person_name = person_name
@@ -18,4 +18,4 @@ class Staff(PersonClass):
 
         super(Staff, self).__init__(person_name, person_description, wants_accommodation)
 
-#create person here
+

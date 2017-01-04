@@ -18,4 +18,4 @@ class Lspace(RoomClass):
     def __init__(self, room_name, room_type):
         super(Lspace, self).__init__(room_name,  room_type="LSPACE",
                                      max_occupants=4, occupants=0)
-#add lspace, office here
+

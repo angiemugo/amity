@@ -5,7 +5,7 @@ This system makes it easy to manage rooms and people at Amity.
 Usage:
 	create_room <room_type> <room_name>
 	add_person <person_name> <person_description> [--wants_accommodation=N]
-	reallocate_person <person_name> <room_type> <new_room>
+	reallocate_person <person_identifier><new_room>
 	load_people <filename>
 	print_room <room_name>
 	print_allocations [--o=filename]
