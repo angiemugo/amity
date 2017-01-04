@@ -6,3 +6,5 @@ __pycache__/
 .amitydb2
 *.db
 .idea
+.iml
+.xml
