@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97154803-e552-4918-a1ce-bf6009b5a188" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/adb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amity" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amity.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/amitydb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/load_file.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/load_file.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/test_amity_success.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/somedb.db" afterPath="$PROJECT_DIR$/app/somedb.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/somedb.db" afterPath="$PROJECT_DIR$/somedb.db" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/somedb.db" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/amity.py" afterPath="$PROJECT_DIR$/app/amity.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.py" afterPath="$PROJECT_DIR$/app/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/employee.py" afterPath="$PROJECT_DIR$/app/employee.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/room.py" afterPath="$PROJECT_DIR$/app/room.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,8 +56,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="105">
+              <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -825,8 +812,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="105">
+          <caret line="7" column="5" lean-forward="false" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding />
         </state>
       </provider>
