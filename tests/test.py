@@ -54,8 +54,9 @@ class ClassAmitySuccessTest(unittest.TestCase):
         self.assertEqual(len(self.amity.staff_list), 3)
 
     def test_it_prints_allocations(self):
-        self.amity.print_allocations('test.txt')
-        self.assertTrue(os.path.isfile('test.txt'))
+        dirname = os.path.dirname(os.path.realpath(__file__))
+        self.amity.print_allocations(os.path.join(dirname, "amity.txt"))
+        self.assertTrue(os.path.isfile('tamity.txt'))
         os.remove('test.txt')
 
     def test_it_prints_unallocated(self):
