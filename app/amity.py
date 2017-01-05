@@ -9,8 +9,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import select
 
 
-
-
 class AmityDefaultDict(defaultdict):
     def __setitem__(self, key, value):
         key = key.upper()

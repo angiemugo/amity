@@ -47,8 +47,6 @@ class ClassAmitySuccessTest(unittest.TestCase):
         self.amity.reallocate_person("angie","yellow")
         self.assertNotIn("angie", self.amity.office_allocations["blue"])
 
-
-
     def test_load_from_file(self):
         self.amity.load_people(self, people_file)
         self.assertEqual(len(self.amity.fellows_list), 4)

@@ -1,10 +1,10 @@
-__pycache__/
+.__pycache__/
 *.pyc
 .coverage
 .DS_Store
-.*.txt
+*.txt
 .amitydb2
 *.db
 .idea
-.iml
-.xml
+*.iml
+*.xml
