@@ -9,8 +9,8 @@ class ClassAmitySuccessTest(unittest.TestCase):
         self.amity = Amity()
         self.amity.all_people = []
         self.amity.all_rooms = []
-        self.amity.office_allocations = defaultdict()
-        self.amity.lspace_allocations = defaultdict()
+        self.amity.office_allocations = defaultdict(list)
+        self.amity.lspace_allocations = defaultdict(list)
         self.amity.fellows_list = []
         self.amity.staff_list = []
 
@@ -33,18 +33,24 @@ class ClassAmitySuccessTest(unittest.TestCase):
             self.assertIn("Angie", self.amity.lspace_allocations[occupants])
 
     def test_reallocate_person(self):
+        self.amity.create_room("blue", "office")
+        self.amity.add_person("angie", "staff")
+        print(self.amity.office_allocations)
         self.amity.reallocate_person("angie","blue")
-        self.assertIn("Angie", self.amity.office_allocations["blue"])
+        self.assertIn("angie", self.amity.office_allocations["blue"])
 
     def test_person_is_removed_from_old_room(self):
+        self.amity.create_room("blue", "office")
         self.amity.add_person("angie","staff")
-        self.assertin("Angie", self.amity.office_allocations["blue"])
+        self.assertIn("angie", self.amity.office_allocations["blue"])
+        self.amity.create_room("yellow", "office")
         self.amity.reallocate_person("angie","yellow")
-        self.assertnotin("Angie", self.amity.office_allocations["blue"])
+        self.assertNotIn("angie", self.amity.office_allocations["blue"])
 
-    def test_load_from_file(self, filename):
 
-        self.amity.load_people(self, filename)
+
+    def test_load_from_file(self):
+        self.amity.load_people(self, people_file)
         self.assertEqual(len(self.amity.fellows_list), 4)
         self.assertEqual(len(self.amity.staff_list), 3)
 
