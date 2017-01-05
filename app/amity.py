@@ -4,9 +4,9 @@ from app.employee import PersonClass, Fellow, Staff
 from app.room import RoomClass, Office, Lspace
 import random
 from collections import defaultdict
-# from sqlalchemy import create_engine
-# from sqlalchemy.orm import sessionmaker
-# from sqlalchemy.sql import select
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql import select
 
 
 
