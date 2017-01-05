@@ -48,22 +48,23 @@ class ClassAmitySuccessTest(unittest.TestCase):
         self.assertNotIn("angie", self.amity.office_allocations["blue"])
 
     def test_load_from_file(self):
-        self.amity.load_people(self, people_file)
+        dirname = os.path.dirname(os.path.realpath(__file__))
+        self.amity.load_people(os.path.join(dirname, "test.txt"))
         self.assertEqual(len(self.amity.fellows_list), 4)
         self.assertEqual(len(self.amity.staff_list), 3)
 
     def test_it_prints_allocations(self):
-        Amity.print_allocations('test.txt')
+        self.amity.print_allocations('test.txt')
         self.assertTrue(os.path.isfile('test.txt'))
         os.remove('test.txt')
 
     def test_it_prints_unallocated(self):
-        Amity.print_unallocated('test.txt')
+        self.amity.print_unallocated('test.txt')
         self.assertTrue(os.path.isfile('test.txt'))
         os.remove('test.txt')
 
     def test_it_saves_state(self):
-        Amity.save_state('test.db')
+        self.amity.save_state('test.db')
         self.assertTrue(os.path.isfile('test.db'))
         os.remove('test.db')
 

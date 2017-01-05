@@ -159,19 +159,19 @@ class Amity(object):
             print("\n")
             for name in names:
                 print(name)
-            print("\n")
+                print("\n")
 
-            if filename:
+                if filename:
 
-                file = open(filename, "a")
-                file.write("\n")
-                file.write("-" * 30 + "\n")
-                file.write(office)
-                file.write ("\n")
-                file.write("-" * 30 + "\n")
-                for name in self.office_allocations[office]:
-                        file.write(name.upper() + ", " )
-                file.write("\n"+"-"*30 + "\n")
+                    file = open(filename, "a")
+                    file.write("\n")
+                    file.write("-" * 30 + "\n")
+                    file.write(office)
+                    file.write ("\n")
+                    file.write("-" * 30 + "\n")
+                    for name in self.office_allocations[office]:
+                            file.write(name.upper() + ", " )
+                    file.write("\n"+"-"*30 + "\n")
 
     def print_lspace_allocations(self, filename=None):
         """prints all allocations"""
@@ -182,18 +182,18 @@ class Amity(object):
             print("\n")
             for name in names:
                 print(name)
-            print("\n")
+                print("\n")
 
-        if filename:
-            file = open(filename, "a")
-            file.write("\n")
-            file.write("-" * 30 + "\n")
-            file.write(lspace)
-            file.write ("\n")
-            file.write("-" * 30 + "\n")
-            for name in self.lspace_allocations[lspace]:
-                    file.write(name.upper() + ", " )
-            file.write("\n"+"-"*30 + "\n")
+            if filename:
+                file = open(filename, "a")
+                file.write("\n")
+                file.write("-" * 30 + "\n")
+                file.write(lspace)
+                file.write ("\n")
+                file.write("-" * 30 + "\n")
+                for name in self.lspace_allocations[lspace]:
+                        file.write(name.upper() + ", " )
+                file.write("\n"+"-"*30 + "\n")
 
     def print_allocations(self, filename=None):
         self.print_office_allocations(filename)
