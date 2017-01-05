@@ -2,9 +2,10 @@
 *.pyc
 .coverage
 .DS_Store
-*.txt
+.test.test.txt
 .amitydb2
 *.db
 .idea
 *.iml
 *.xml
+.amity.txt
