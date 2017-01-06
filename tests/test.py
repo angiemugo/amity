@@ -25,7 +25,6 @@ class ClassAmitySuccessTest(unittest.TestCase):
         msg = self.amity.add_person("angie", "staff")
         self.assertEqual(msg, "sorry, this user already exists.please choose another name")
 
-
     def test_room_added_to_list(self):
         self.amity.create_room("purple", "office")
         self.assertEqual(len(self.amity.all_rooms), 1)
@@ -68,12 +67,6 @@ class ClassAmitySuccessTest(unittest.TestCase):
         self.assertEqual(len(self.amity.fellows_list), 4)
         self.assertEqual(len(self.amity.staff_list), 3)
 
-    # def test_it_prints_allocations(self):
-    #     dirname = os.path.dirname(os.path.realpath(__file__))
-    #     self.amity.print_allocations(os.path.join(dirname, "test_print"))
-    #     self.assertTrue(os.path.isfile('test_print.txt'))
-    #     os.remove('test_print.txt')
-
     def test_it_prints_unallocated(self):
         self.amity.print_unallocated('test_print')
         self.assertTrue(os.path.isfile('test_print.txt'))
@@ -83,8 +76,6 @@ class ClassAmitySuccessTest(unittest.TestCase):
         self.amity.save_state('test.db')
         self.assertTrue(os.path.isfile('test.db.db'))
         os.remove('test.db.db')
-
-
 
 if __name__ == '__main__':
     unittest.main()
