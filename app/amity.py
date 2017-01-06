@@ -1,4 +1,3 @@
-
 from app.database import Employee, Room, create_db, Base
 from app.employee import PersonClass, Fellow, Staff
 from app.room import RoomClass, Office, Lspace
@@ -32,22 +31,28 @@ class Amity(object):
     def create_room(self, room_name, room_type):
         """creates a room not previously in system"""
         all_room_names = [room.room_name for room in self.all_rooms]
+        msg = ''
 
         if room_name in all_room_names:
-            print("sorry, room already exists!please choose another name")
+            msg = "sorry, room already exists!please choose another name"
+            print(msg)
+            return msg
         else:
             if room_type.upper() == "LSPACE":
                 room = Lspace(room_name, room_type)
                 self.all_rooms.append(room)
 
-                print("room successfully created")
+                msg = "room successfully created"
+                print(msg)
             elif room_type.upper() == "OFFICE":
                 room = Office(room_name, room_type)
                 self.all_rooms.append(room)
-                print("room successfully created")
+                msg = "room successfully created"
+                print(msg)
 
             else:
-                print("sorry, that room_type does not exist")
+                msg = "sorry, that room_type does not exist"
+                print(msg)
 
     def generate_room(self, r_type):
         """returns a list of all rooms not full"""
@@ -73,7 +78,9 @@ class Amity(object):
         """adds person to system"""
         all_people_names = [person.person_name for person in self.all_people]
         if person_name in all_people_names:
-            print("sorry, this user already exists.please choose another name")
+            msg="sorry, this user already exists.please choose another name"
+            return msg
+            print(msg)
         else:
             if person_description.upper() == "STAFF":
                 staff = Staff(person_name, person_description,
@@ -163,7 +170,7 @@ class Amity(object):
 
                 if filename:
 
-                    file = open(filename, "a")
+                    file = open(filename + ".txt", "a")
                     file.write("\n")
                     file.write("-" * 30 + "\n")
                     file.write(office)
@@ -185,7 +192,7 @@ class Amity(object):
                 print("\n")
 
             if filename:
-                file = open(filename, "a")
+                file = open(filename + ".txt", "a")
                 file.write("\n")
                 file.write("-" * 30 + "\n")
                 file.write(lspace)
@@ -217,10 +224,6 @@ class Amity(object):
                 if person_name in self.office_allocations[room]:
                     return room
         return None
-
-
-
-
 
     def reallocate_person(self, person_name, new_room):
         """reallocates person allocates person to a specifiedroom """

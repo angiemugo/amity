@@ -18,21 +18,24 @@ class ClassAmitySuccessTest(unittest.TestCase):
         self.amity.add_person("awesome", "fellow","y")
         self.assertEqual(len(self.amity.all_people), 1)
 
-    # def test_add_person_failure(self):
-    #     self.assertIn("angie", self.amity.all_people)
-    #     self.amity.add_person("angie", "staff")
-    #     self.assertEqual(response, "this person already exists")
-    #
+    def test_add_person_failure(self):
+        self.amity.add_person("angie", "staff")
+        people_names = [people.person_name for people in self.amity.all_people]
+        self.assertIn("angie", people_names)
+        msg = self.amity.add_person("angie", "staff")
+        self.assertEqual(msg, "sorry, this user already exists.please choose another name")
+
 
     def test_room_added_to_list(self):
         self.amity.create_room("purple", "office")
         self.assertEqual(len(self.amity.all_rooms), 1)
 
-    # def test_room_with_same_name_not_created(self):
-    #     self.amity.create_room("purple", "office")
-    #     self.assertIn("blue", self.amity.all_rooms)
-    #     self.amity.create_room("purple", "office")
-    #     self.assertequal(response, "the room already exists")
+    def test_room_with_same_name_not_created(self):
+        self.amity.create_room("purple", "office")
+        r_names = [r.room_name for r in self.amity.all_rooms]
+        self.assertIn("purple", r_names)
+        msg = self.amity.create_room("purple", "office")
+        self.assertEqual(msg, "sorry, room already exists!please choose another name")
 
     def test_office_allocation(self):
         self.amity.add_person("Angie", "Staff", "Y")
@@ -67,19 +70,20 @@ class ClassAmitySuccessTest(unittest.TestCase):
 
     # def test_it_prints_allocations(self):
     #     dirname = os.path.dirname(os.path.realpath(__file__))
-    #     self.amity.print_allocations(os.path.join(dirname, "amity.txt"))
-    #     self.assertTrue(os.path.isfile('tamity.txt'))
-    #     os.remove('test.txt')
-    #
-    # def test_it_prints_unallocated(self):
-    #     self.amity.print_unallocated('test.txt')
-    #     self.assertTrue(os.path.isfile('test.txt'))
-    #     os.remove('test.txt')
-    #
-    # def test_it_saves_state(self):
-    #     self.amity.save_state('test.db')
-    #     self.assertTrue(os.path.isfile('test.db'))
-    #     os.remove('test.db')
+    #     self.amity.print_allocations(os.path.join(dirname, "test_print"))
+    #     self.assertTrue(os.path.isfile('test_print.txt'))
+    #     os.remove('test_print.txt')
+
+    def test_it_prints_unallocated(self):
+        self.amity.print_unallocated('test_print')
+        self.assertTrue(os.path.isfile('test_print.txt'))
+        os.remove('test_print.txt')
+
+    def test_it_saves_state(self):
+        self.amity.save_state('test.db')
+        self.assertTrue(os.path.isfile('test.db.db'))
+        os.remove('test.db.db')
+
 
 
 if __name__ == '__main__':

@@ -25,7 +25,7 @@ from docopt import docopt, DocoptExit
 from pyfiglet import figlet_format
 from termcolor import cprint
 
-from amity import Amity
+from app.amity import Amity
 
 
 def app_exec(func):
